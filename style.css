@@ -98,10 +98,17 @@ h1:hover {
         grid-template-columns: auto;
     }
 
-    #backBtn,
+
+
+
+    #backBtn {
+        margin: 10px;
+        transition: transform 0.001s; /* You can keep this fast for backBtn */
+    }
+
     #nextBtn {
         margin: 10px;
-        transition: transform 0.001s;
+        transition: transform 0.8s; /* Adjust the animation duration here for nextBtn */
     }
 }
 
