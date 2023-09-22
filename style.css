@@ -17,10 +17,15 @@ h1 {
 }
 
 h1:hover {
-    color: #00ffff; 
+    color: #00d8d8; 
 }
 .highlight {
-    animation: fadeIn 1.5s ease forwards; 
+
+    animation: fadeIn 5.5s ease forwards; 
+    font-size: 40px;
+    position: relative; 
+    top: 60px;
+  
 }
 
 @keyframes fadeIn {
@@ -30,11 +35,15 @@ h1:hover {
 .back-button {
     display: block;
     text-align: center;
-    margin-top: 20px;
-    transition: color 0.1s ease; 
-    cursor: pointer; 
+    position: relative; 
+    top: -100px; 
+    transition: color 0.1s ease;
+    cursor: pointer;
     color: white;
+    font-size: 40px;
+  
 }
+
 .back-button:hover {
     color: #00ffff; 
 }
@@ -71,6 +80,7 @@ h1:hover {
     justify-content: center;
     margin: 10% auto;
 }
+
 
 #backBtn,
 #nextBtn {
