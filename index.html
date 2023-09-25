@@ -1,73 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Image gallery</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
-    <script src="js/lightbox-plus-jquery.min.js"></script>
 </head>
 <body>
     <h1 class="highlight">Welcome to Our Digital Art Gallery</h1>
 
- 
     <div class="gallery-wrap">
-        <img src="digital_art/back.png" id="backBtn">
+        <img src="digital_art/back.png" id="backBtn" alt="Back Button">
         <div class="gallery">
             <div>
-                <span><a href="./digital_art/1.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/1_small.jpg"></a></span>
-                <span><a href="./digital_art/alone.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/alone_small.jpg"></a></span>
-                <span><a href="./digital_art/bangladesh.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/bangladesh_small.jpg"></a></span>
+                <span><a href="./digital_art/1.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/1_small.jpg" alt="Image 1"></a></span>
+                <span><a href="./digital_art/alone.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/alone_small.jpg" alt="Image 2"></a></span>
+                <span><a href="./digital_art/bangladesh.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/bangladesh_small.jpg" alt="Image 3"></a></span>
             </div>
             <div>
-                <span><a href="./digital_art/banner.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/banner_small.jpg"></a></span>
-                <span><a href="./digital_art/banner2.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/banner2_small.jpg"></a></span>
-                <span><a href="./digital_art/gani bhai.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/gan_small.jpg"></a></span>
+                <span><a href="./digital_art/banner.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/banner_small.jpg" alt="Image 4"></a></span>
+                <span><a href="./digital_art/banner2.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/banner2_small.jpg" alt="Image 5"></a></span>
+                <span><a href="./digital_art/gani bhai.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/gan_small.jpg" alt="Image 6"></a></span>
             </div>
-
-
             <div>
-                <a href ="./digital_art/namaz.jpg"data-lightbox="mygallery" data-title=" practcicee"><img src="./digital_art/namaz_small.jpg"></a>
-                <a href ="./digital_art/SAYEM VAI.jpg"data-lightbox="mygallery" data-title=" practcicee"><img src="./digital_art/SAYEM VAI_small.jpg"></a>
-                <a href ="./digital_art/stop_war.jpg"data-lightbox="mygallery" data-title=" practcicee"><img src="./digital_art/stop_war_small.jpg"></a>
+                <a href="./digital_art/namaz.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/namaz_small.jpg" alt="Image 7"></a>
+                <a href="./digital_art/SAYEM VAI.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/SAYEM VAI_small.jpg" alt="Image 8"></a>
+                <a href="./digital_art/stop_war.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/stop_war_small.jpg" alt="Image 9"></a>
             </div>
-
-
-
             <div>
-                <a href ="./digital_art/profile.jpg"data-lightbox="mygallery" data-title=" practcicee"><img src="./digital_art/profile_small.jpg"></a>
-                <a href ="./digital_art/SOHEL VAI F.jpg"data-lightbox="mygallery" data-title=" practcicee"><img src="./digital_art/SOHEL VAI F_small.jpg"></a>
-                <a href ="./digital_art/sohel.jpg"data-lightbox="mygallery" data-title=" practcicee"><img src="./digital_art/sohel_small.jpg"></a>
+                <a href="./digital_art/profile.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/profile_small.jpg" alt="Image 10"></a>
+                <a href="./digital_art/SOHEL VAI F.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/SOHEL VAI F_small.jpg" alt="Image 11"></a>
+                <a href="./digital_art/sohel.jpg" data-lightbox="mygallery" data-title="practicee"><img src="./digital_art/sohel_small.jpg" alt="Image 12"></a>
             </div>
-
-
-
         </div>
-        <img src="digital_art/next.png" id="nextBtn">
+        <img src="digital_art/next.png" id="nextBtn" alt="Next Button">
     </div>
-    <a href="/portfolio/index.html" class="back-button">Back to Project</a> 
+    <a href="portfolio/index.html" class="back-button">Back to Project</a>
 
     <script>
-        let scrollContainer = document.querySelector(".gallery");
-        let backBtn = document.getElementById("backBtn");
-        let nextBtn = document.getElementById("nextBtn");
+        document.addEventListener("DOMContentLoaded", function () {
+            let scrollContainer = document.querySelector(".gallery");
+            let backBtn = document.getElementById("backBtn");
+            let nextBtn = document.getElementById("nextBtn");
 
-        scrollContainer.addEventListener("wheel", (evt) => {
-            evt.preventDefault();
-            scrollContainer.style.scrollBehavior = "smooth"; // Fixed typo here
-            scrollContainer.scrollLeft += evt.deltaY;
-        });
+            scrollContainer.addEventListener("wheel", (evt) => {
+                evt.preventDefault();
+                scrollContainer.style.scrollBehavior = "smooth";
+                scrollContainer.scrollLeft += evt.deltaY;
+            });
 
-        nextBtn.addEventListener("click", () => { // Added missing comma here
-            scrollContainer.style.scrollBehavior = "smooth";
-            scrollContainer.scrollLeft += 900;
-        });
+            nextBtn.addEventListener("click", () => {
+                scrollContainer.style.scrollBehavior = "smooth";
+                scrollContainer.scrollLeft += 900;
+            });
 
-        backBtn.addEventListener("click", () => { // Added missing comma here
-            scrollContainer.style.scrollBehavior = "smooth";
-            scrollContainer.scrollLeft -= 900;
+            backBtn.addEventListener("click", () => {
+                scrollContainer.style.scrollBehavior = "smooth";
+                scrollContainer.scrollLeft -= 900;
+            });
         });
     </script>
+    <script src="js/lightbox-plus-jquery.min.js"></script>
 </body>
 </html>
